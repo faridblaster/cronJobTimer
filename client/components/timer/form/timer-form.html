@@ -1,0 +1,92 @@
+<template name="TimerForm">
+
+  <div class="container">
+    <div class="content">
+      <h1><div class="title">{{currentTime}}</div></h1>
+      <span class="bounced-word anim_1"><img class="ball" src="/images/ball.png"/></span>
+      <span class="bounced-word anim_2"><img class="ball" src="/images/ball.png"/></span>
+      <span class="bounced-word anim_3"><img class="ball" src="/images/ball.png"/></span>
+      <span class="bounced-word anim_4"><img class="ball" src="/images/ball.png"/></span>
+
+      <div class="row m-t-30">
+
+        <div class="col-sm-12">
+
+          <div class="col-sm-5">
+
+            <label class="col-sm-4 control-label">
+              Tarikh Jana <span class="text-danger">*</span>
+            </label>
+
+            <div class="col-sm-8 bv-input-group">
+              <div class="input-group date">
+                <input id="my-datepicker" name="generate_date" type='text' class="form-control input-sm lookup" placeholder="Tarikh Jana" required="">
+                  <span class="input-group-addon">
+                    <span class="fa fa-calendar"></span>
+                  </span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-sm-7">
+
+            <div class="col-sm-6">
+
+              <label class="col-sm-4 control-label">
+                Jam <span class="text-danger">*</span>
+              </label>
+
+              <div class="col-sm-8">
+                <select name="__hour" tooltip="Jam" class="form-control input-sm">
+                  <option value=""> Sila Pilih Jam</option>
+                  {{#each hours}}
+                  <option value="{{hour}}" {{xioOptionSelected hour current_depreciation_job.hour}}> {{hour}} </option>
+                  {{/each}}
+                </select>
+              </div>
+
+            </div>
+
+            <div class="col-sm-6">
+
+              <label class="col-sm-4 control-label">
+                Minit <span class="text-danger">*</span>
+              </label>
+
+              <div class="col-sm-8">
+                <select name="__minute" tooltip="Minit" class="form-control input-sm">
+                  <option value=""> Sila Pilih Minit</option>
+                  {{#each minutes}}
+                  <option value="{{minute}}" {{xioOptionSelected minute current_depreciation_job.minute}}> {{minute}} </option>
+                  {{/each}}
+                </select>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row m-t-30 m-r-15 m-b-xs">
+
+        <div class="col-sm-12">
+
+          <div class="col-sm-4"></div>
+          <div class="col-sm-8 m-t-xs p-t-5">
+          <span class="pull-right">
+            <button class="btn btn-success" xaction="save_config">Kemaskini</button>
+          </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</template>
